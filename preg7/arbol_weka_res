@@ -1,0 +1,1524 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     bank
+Instances:    4521
+Attributes:   17
+              age
+              job
+              marital
+              education
+              default
+              balance
+              housing
+              loan
+              contact
+              day
+              month
+              duration
+              campaign
+              pdays
+              previous
+              poutcome
+              y
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+education = primary
+|   age <= 53
+|   |   y = no: blue-collar (453.0/145.0)
+|   |   y = yes
+|   |   |   housing = no
+|   |   |   |   marital = divorced: blue-collar (2.0)
+|   |   |   |   marital = married
+|   |   |   |   |   pdays <= 90: housemaid (6.0/2.0)
+|   |   |   |   |   pdays > 90: blue-collar (2.0)
+|   |   |   |   marital = single
+|   |   |   |   |   age <= 26: student (2.0)
+|   |   |   |   |   age > 26: housemaid (2.0/1.0)
+|   |   |   housing = yes
+|   |   |   |   duration <= 586
+|   |   |   |   |   campaign <= 1: admin. (2.0/1.0)
+|   |   |   |   |   campaign > 1: entrepreneur (4.0/1.0)
+|   |   |   |   duration > 586
+|   |   |   |   |   balance <= 3529
+|   |   |   |   |   |   campaign <= 5: blue-collar (11.0/2.0)
+|   |   |   |   |   |   campaign > 5: services (3.0/1.0)
+|   |   |   |   |   balance > 3529: management (2.0)
+|   age > 53
+|   |   age <= 62
+|   |   |   month = apr
+|   |   |   |   contact = cellular: management (4.0/2.0)
+|   |   |   |   contact = telephone: blue-collar (2.0)
+|   |   |   |   contact = unknown: blue-collar (0.0)
+|   |   |   month = aug
+|   |   |   |   balance <= 272: retired (9.0/3.0)
+|   |   |   |   balance > 272
+|   |   |   |   |   day <= 10: housemaid (2.0/1.0)
+|   |   |   |   |   day > 10: blue-collar (7.0/3.0)
+|   |   |   month = dec: blue-collar (0.0)
+|   |   |   month = feb
+|   |   |   |   duration <= 193: retired (6.0/3.0)
+|   |   |   |   duration > 193: unemployed (3.0)
+|   |   |   month = jan: blue-collar (5.0/4.0)
+|   |   |   month = jul
+|   |   |   |   campaign <= 7
+|   |   |   |   |   age <= 57
+|   |   |   |   |   |   duration <= 275
+|   |   |   |   |   |   |   marital = divorced: blue-collar (2.0)
+|   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   campaign <= 3: retired (6.0/1.0)
+|   |   |   |   |   |   |   |   campaign > 3: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   marital = single: retired (0.0)
+|   |   |   |   |   |   duration > 275: admin. (3.0/1.0)
+|   |   |   |   |   age > 57
+|   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   housing = no: retired (6.0/1.0)
+|   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   contact = cellular: management (3.0/1.0)
+|   |   |   |   |   |   |   |   contact = telephone: housemaid (3.0/1.0)
+|   |   |   |   |   |   |   |   contact = unknown: housemaid (0.0)
+|   |   |   |   |   |   loan = yes: housemaid (2.0/1.0)
+|   |   |   |   campaign > 7: blue-collar (4.0)
+|   |   |   month = jun
+|   |   |   |   contact = cellular: retired (3.0/1.0)
+|   |   |   |   contact = telephone: blue-collar (0.0)
+|   |   |   |   contact = unknown
+|   |   |   |   |   housing = no
+|   |   |   |   |   |   day <= 10
+|   |   |   |   |   |   |   day <= 7: housemaid (5.0/2.0)
+|   |   |   |   |   |   |   day > 7
+|   |   |   |   |   |   |   |   balance <= 89: housemaid (2.0/1.0)
+|   |   |   |   |   |   |   |   balance > 89: blue-collar (4.0/2.0)
+|   |   |   |   |   |   day > 10
+|   |   |   |   |   |   |   balance <= 3412: blue-collar (11.0/6.0)
+|   |   |   |   |   |   |   balance > 3412: retired (4.0/1.0)
+|   |   |   |   |   housing = yes
+|   |   |   |   |   |   campaign <= 2: blue-collar (3.0/1.0)
+|   |   |   |   |   |   campaign > 2: housemaid (3.0/1.0)
+|   |   |   month = mar: blue-collar (0.0)
+|   |   |   month = may
+|   |   |   |   marital = divorced
+|   |   |   |   |   age <= 56: self-employed (2.0/1.0)
+|   |   |   |   |   age > 56: admin. (4.0/2.0)
+|   |   |   |   marital = married
+|   |   |   |   |   age <= 58: blue-collar (20.0/7.0)
+|   |   |   |   |   age > 58
+|   |   |   |   |   |   duration <= 212
+|   |   |   |   |   |   |   duration <= 138: retired (3.0/1.0)
+|   |   |   |   |   |   |   duration > 138: blue-collar (2.0)
+|   |   |   |   |   |   duration > 212: technician (3.0/1.0)
+|   |   |   |   marital = single: services (1.0)
+|   |   |   month = nov
+|   |   |   |   housing = no: blue-collar (6.0/3.0)
+|   |   |   |   housing = yes: management (2.0)
+|   |   |   month = oct: retired (1.0)
+|   |   |   month = sep: management (2.0/1.0)
+|   |   age > 62: retired (38.0/5.0)
+education = secondary
+|   age <= 50
+|   |   age <= 30
+|   |   |   age <= 23
+|   |   |   |   loan = no
+|   |   |   |   |   housing = no: student (16.0/3.0)
+|   |   |   |   |   housing = yes: services (7.0/3.0)
+|   |   |   |   loan = yes: admin. (2.0/1.0)
+|   |   |   age > 23
+|   |   |   |   month = apr
+|   |   |   |   |   marital = divorced: services (1.0)
+|   |   |   |   |   marital = married: blue-collar (7.0/1.0)
+|   |   |   |   |   marital = single
+|   |   |   |   |   |   balance <= 239
+|   |   |   |   |   |   |   housing = no: student (3.0/1.0)
+|   |   |   |   |   |   |   housing = yes: services (2.0)
+|   |   |   |   |   |   balance > 239
+|   |   |   |   |   |   |   age <= 28: student (7.0/4.0)
+|   |   |   |   |   |   |   age > 28: blue-collar (4.0/2.0)
+|   |   |   |   month = aug
+|   |   |   |   |   pdays <= 38
+|   |   |   |   |   |   campaign <= 1: services (2.0)
+|   |   |   |   |   |   campaign > 1: technician (6.0/2.0)
+|   |   |   |   |   pdays > 38: admin. (2.0/1.0)
+|   |   |   |   month = dec: student (1.0)
+|   |   |   |   month = feb
+|   |   |   |   |   housing = no
+|   |   |   |   |   |   balance <= 448
+|   |   |   |   |   |   |   age <= 28: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   age > 28: technician (3.0/1.0)
+|   |   |   |   |   |   balance > 448
+|   |   |   |   |   |   |   campaign <= 3: services (4.0/1.0)
+|   |   |   |   |   |   |   campaign > 3: blue-collar (2.0)
+|   |   |   |   |   housing = yes: admin. (2.0/1.0)
+|   |   |   |   month = jan
+|   |   |   |   |   poutcome = failure: services (2.0/1.0)
+|   |   |   |   |   poutcome = other: admin. (3.0/1.0)
+|   |   |   |   |   poutcome = success: admin. (1.0)
+|   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   balance <= 432
+|   |   |   |   |   |   |   age <= 28: self-employed (3.0/1.0)
+|   |   |   |   |   |   |   age > 28: services (4.0/2.0)
+|   |   |   |   |   |   balance > 432
+|   |   |   |   |   |   |   balance <= 1287
+|   |   |   |   |   |   |   |   balance <= 602: unemployed (2.0)
+|   |   |   |   |   |   |   |   balance > 602: admin. (4.0/1.0)
+|   |   |   |   |   |   |   balance > 1287: student (2.0)
+|   |   |   |   month = jul
+|   |   |   |   |   contact = cellular
+|   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   day <= 29
+|   |   |   |   |   |   |   |   balance <= 3: services (16.0/7.0)
+|   |   |   |   |   |   |   |   balance > 3
+|   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   duration <= 222
+|   |   |   |   |   |   |   |   |   |   |   balance <= 88: technician (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   balance > 88: blue-collar (14.0/8.0)
+|   |   |   |   |   |   |   |   |   |   duration > 222
+|   |   |   |   |   |   |   |   |   |   |   duration <= 295: admin. (3.0)
+|   |   |   |   |   |   |   |   |   |   |   duration > 295: services (7.0/3.0)
+|   |   |   |   |   |   |   |   |   loan = yes: services (7.0/3.0)
+|   |   |   |   |   |   |   day > 29
+|   |   |   |   |   |   |   |   loan = no: admin. (5.0/2.0)
+|   |   |   |   |   |   |   |   loan = yes: blue-collar (2.0)
+|   |   |   |   |   |   y = yes
+|   |   |   |   |   |   |   loan = no: services (5.0/3.0)
+|   |   |   |   |   |   |   loan = yes: blue-collar (4.0/1.0)
+|   |   |   |   |   contact = telephone: services (3.0/1.0)
+|   |   |   |   |   contact = unknown
+|   |   |   |   |   |   age <= 26: blue-collar (3.0/1.0)
+|   |   |   |   |   |   age > 26: admin. (3.0/2.0)
+|   |   |   |   month = jun
+|   |   |   |   |   pdays <= 38
+|   |   |   |   |   |   marital = divorced: admin. (1.0)
+|   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   duration <= 501
+|   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   housing = no: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   housing = yes: blue-collar (2.0)
+|   |   |   |   |   |   |   |   loan = yes: admin. (2.0/1.0)
+|   |   |   |   |   |   |   duration > 501: services (2.0/1.0)
+|   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   campaign <= 10
+|   |   |   |   |   |   |   |   day <= 13: technician (11.0/5.0)
+|   |   |   |   |   |   |   |   day > 13: blue-collar (5.0/2.0)
+|   |   |   |   |   |   |   campaign > 10: management (2.0)
+|   |   |   |   |   pdays > 38: services (2.0)
+|   |   |   |   month = mar
+|   |   |   |   |   balance <= 192: management (2.0/1.0)
+|   |   |   |   |   balance > 192: student (4.0/1.0)
+|   |   |   |   month = may
+|   |   |   |   |   housing = no
+|   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   age <= 27: student (3.0)
+|   |   |   |   |   |   |   age > 27: services (2.0/1.0)
+|   |   |   |   |   |   contact = telephone: admin. (2.0/1.0)
+|   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   duration <= 212: blue-collar (5.0/1.0)
+|   |   |   |   |   |   |   duration > 212: admin. (3.0/2.0)
+|   |   |   |   |   housing = yes
+|   |   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   marital = divorced: blue-collar (0.0)
+|   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   campaign <= 1: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   campaign > 1: blue-collar (5.0/1.0)
+|   |   |   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   |   |   campaign <= 1: student (2.0/1.0)
+|   |   |   |   |   |   |   |   |   campaign > 1: services (2.0)
+|   |   |   |   |   |   |   loan = yes: admin. (3.0/2.0)
+|   |   |   |   |   |   poutcome = other
+|   |   |   |   |   |   |   day <= 12: services (2.0/1.0)
+|   |   |   |   |   |   |   day > 12: admin. (4.0/1.0)
+|   |   |   |   |   |   poutcome = success: admin. (1.0)
+|   |   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   |   marital = divorced: services (5.0/1.0)
+|   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   balance <= 3
+|   |   |   |   |   |   |   |   |   |   balance <= -41
+|   |   |   |   |   |   |   |   |   |   |   day <= 20: blue-collar (3.0)
+|   |   |   |   |   |   |   |   |   |   |   day > 20: self-employed (2.0)
+|   |   |   |   |   |   |   |   |   |   balance > -41: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   balance > 3
+|   |   |   |   |   |   |   |   |   |   day <= 7: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   day > 7
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   age <= 24: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   age > 24
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 28: blue-collar (11.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 28
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 29
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 20: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 20: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 29
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 17: admin. (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 17
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 685: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 685: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 3
+|   |   |   |   |   |   |   |   |   |   |   |   age <= 29: blue-collar (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   age > 29: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   |   age <= 27: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   age > 27: blue-collar (4.0)
+|   |   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   balance <= -76
+|   |   |   |   |   |   |   |   |   |   day <= 16: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   day > 16: services (4.0/2.0)
+|   |   |   |   |   |   |   |   |   balance > -76
+|   |   |   |   |   |   |   |   |   |   day <= 8
+|   |   |   |   |   |   |   |   |   |   |   duration <= 228
+|   |   |   |   |   |   |   |   |   |   |   |   day <= 6: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   day > 6: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   duration > 228
+|   |   |   |   |   |   |   |   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 644: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 644: student (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   campaign > 3: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   day > 8
+|   |   |   |   |   |   |   |   |   |   |   balance <= 3382
+|   |   |   |   |   |   |   |   |   |   |   |   balance <= 203: blue-collar (11.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   balance > 203
+|   |   |   |   |   |   |   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 130
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 12: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 12: services (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 130
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 475
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 328: services (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 328: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 475: technician (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 2: blue-collar (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   y = yes: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   balance > 3382: blue-collar (4.0/1.0)
+|   |   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   |   duration <= 198: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   duration > 198: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   contact = telephone: blue-collar (0.0)
+|   |   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   |   duration <= 626: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   duration > 626: self-employed (2.0/1.0)
+|   |   |   |   month = nov
+|   |   |   |   |   day <= 20
+|   |   |   |   |   |   balance <= 353: student (2.0)
+|   |   |   |   |   |   balance > 353: technician (3.0/1.0)
+|   |   |   |   |   day > 20: admin. (2.0/1.0)
+|   |   |   |   month = oct: admin. (3.0/2.0)
+|   |   |   |   month = sep: admin. (3.0/2.0)
+|   |   age > 30
+|   |   |   month = apr
+|   |   |   |   contact = cellular
+|   |   |   |   |   housing = no
+|   |   |   |   |   |   campaign <= 4
+|   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   marital = divorced: services (1.0)
+|   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   day <= 20: technician (2.0)
+|   |   |   |   |   |   |   |   |   day > 20: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   marital = single: admin. (2.0)
+|   |   |   |   |   |   |   y = yes: services (4.0/1.0)
+|   |   |   |   |   |   campaign > 4: admin. (2.0/1.0)
+|   |   |   |   |   housing = yes
+|   |   |   |   |   |   marital = divorced
+|   |   |   |   |   |   |   previous <= 0: admin. (5.0/2.0)
+|   |   |   |   |   |   |   previous > 0: technician (3.0/1.0)
+|   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   duration <= 362
+|   |   |   |   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   |   |   |   balance <= 1521
+|   |   |   |   |   |   |   |   |   |   day <= 15: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   day > 15: blue-collar (8.0/3.0)
+|   |   |   |   |   |   |   |   |   balance > 1521
+|   |   |   |   |   |   |   |   |   |   duration <= 131: services (2.0)
+|   |   |   |   |   |   |   |   |   |   duration > 131: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   poutcome = other
+|   |   |   |   |   |   |   |   |   day <= 18: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   day > 18: technician (2.0)
+|   |   |   |   |   |   |   |   poutcome = success: blue-collar (1.0)
+|   |   |   |   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   balance <= 318
+|   |   |   |   |   |   |   |   |   |   |   day <= 18
+|   |   |   |   |   |   |   |   |   |   |   |   age <= 32: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   age > 32: services (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   day > 18: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   balance > 318: blue-collar (16.0/4.0)
+|   |   |   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   |   |   balance <= 1005: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   balance > 1005: services (2.0)
+|   |   |   |   |   |   |   duration > 362
+|   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   |   |   day <= 16
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 1: management (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 1: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   day > 16
+|   |   |   |   |   |   |   |   |   |   |   pdays <= 74
+|   |   |   |   |   |   |   |   |   |   |   |   duration <= 420: technician (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration > 420: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pdays > 74: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   y = yes
+|   |   |   |   |   |   |   |   |   |   duration <= 709: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   duration > 709: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   |   |   campaign > 2
+|   |   |   |   |   |   |   |   |   age <= 34: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   age > 34: management (2.0/1.0)
+|   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   duration <= 123: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   duration > 123
+|   |   |   |   |   |   |   |   |   |   |   previous <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   previous <= 0: services (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   previous > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   pdays <= 278: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pdays > 278: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   previous > 3: admin. (2.0)
+|   |   |   |   |   |   |   |   |   campaign > 1: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   campaign > 2: services (4.0/1.0)
+|   |   |   |   |   |   |   y = yes: blue-collar (2.0)
+|   |   |   |   contact = telephone: technician (3.0/1.0)
+|   |   |   |   contact = unknown: blue-collar (0.0)
+|   |   |   month = aug
+|   |   |   |   age <= 44: technician (125.0/34.0)
+|   |   |   |   age > 44
+|   |   |   |   |   marital = divorced
+|   |   |   |   |   |   housing = no
+|   |   |   |   |   |   |   age <= 46: management (2.0)
+|   |   |   |   |   |   |   age > 46: admin. (3.0/2.0)
+|   |   |   |   |   |   housing = yes: technician (2.0)
+|   |   |   |   |   marital = married
+|   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   balance <= 728
+|   |   |   |   |   |   |   |   day <= 27
+|   |   |   |   |   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   |   |   |   |   age <= 47
+|   |   |   |   |   |   |   |   |   |   |   age <= 46: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 46: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   age > 47
+|   |   |   |   |   |   |   |   |   |   |   duration <= 185: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   duration > 185
+|   |   |   |   |   |   |   |   |   |   |   |   balance <= 351: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   balance > 351: admin. (2.0)
+|   |   |   |   |   |   |   |   |   campaign > 3
+|   |   |   |   |   |   |   |   |   |   balance <= 113: admin. (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   balance > 113: blue-collar (5.0/2.0)
+|   |   |   |   |   |   |   |   day > 27: technician (3.0/1.0)
+|   |   |   |   |   |   |   balance > 728
+|   |   |   |   |   |   |   |   housing = no
+|   |   |   |   |   |   |   |   |   balance <= 1178
+|   |   |   |   |   |   |   |   |   |   day <= 10: services (3.0)
+|   |   |   |   |   |   |   |   |   |   day > 10: self-employed (2.0)
+|   |   |   |   |   |   |   |   |   balance > 1178
+|   |   |   |   |   |   |   |   |   |   day <= 19: technician (8.0)
+|   |   |   |   |   |   |   |   |   |   day > 19: services (3.0/1.0)
+|   |   |   |   |   |   |   |   housing = yes: blue-collar (3.0/2.0)
+|   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   housing = no: services (6.0/2.0)
+|   |   |   |   |   |   |   housing = yes: technician (3.0/1.0)
+|   |   |   |   |   marital = single: technician (0.0)
+|   |   |   month = dec
+|   |   |   |   age <= 34: admin. (2.0/1.0)
+|   |   |   |   age > 34: technician (2.0/1.0)
+|   |   |   month = feb
+|   |   |   |   default = no
+|   |   |   |   |   campaign <= 4
+|   |   |   |   |   |   day <= 3
+|   |   |   |   |   |   |   age <= 39
+|   |   |   |   |   |   |   |   marital = divorced: services (1.0)
+|   |   |   |   |   |   |   |   marital = married: blue-collar (5.0/2.0)
+|   |   |   |   |   |   |   |   marital = single: services (8.0/3.0)
+|   |   |   |   |   |   |   age > 39
+|   |   |   |   |   |   |   |   loan = no: unemployed (3.0)
+|   |   |   |   |   |   |   |   loan = yes: blue-collar (2.0/1.0)
+|   |   |   |   |   |   day > 3
+|   |   |   |   |   |   |   age <= 48
+|   |   |   |   |   |   |   |   balance <= 2308
+|   |   |   |   |   |   |   |   |   day <= 12: technician (31.0/14.0)
+|   |   |   |   |   |   |   |   |   day > 12: admin. (2.0)
+|   |   |   |   |   |   |   |   balance > 2308
+|   |   |   |   |   |   |   |   |   day <= 7: unemployed (2.0)
+|   |   |   |   |   |   |   |   |   day > 7: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   age > 48: blue-collar (3.0/2.0)
+|   |   |   |   |   campaign > 4
+|   |   |   |   |   |   day <= 5: technician (3.0/1.0)
+|   |   |   |   |   |   day > 5: services (3.0/1.0)
+|   |   |   |   default = yes: management (3.0/2.0)
+|   |   |   month = jan
+|   |   |   |   loan = no
+|   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   housing = no: blue-collar (3.0/2.0)
+|   |   |   |   |   |   housing = yes: technician (4.0/1.0)
+|   |   |   |   |   poutcome = other: admin. (2.0/1.0)
+|   |   |   |   |   poutcome = success: admin. (2.0/1.0)
+|   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   duration <= 212: admin. (9.0/3.0)
+|   |   |   |   |   |   duration > 212
+|   |   |   |   |   |   |   housing = no
+|   |   |   |   |   |   |   |   duration <= 495: unemployed (2.0)
+|   |   |   |   |   |   |   |   duration > 495: admin. (2.0/1.0)
+|   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   day <= 28: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   day > 28: blue-collar (3.0)
+|   |   |   |   loan = yes
+|   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   balance <= 350: technician (4.0/1.0)
+|   |   |   |   |   |   balance > 350: blue-collar (2.0)
+|   |   |   |   |   campaign > 1: self-employed (2.0/1.0)
+|   |   |   month = jul
+|   |   |   |   poutcome = failure
+|   |   |   |   |   age <= 41: management (2.0/1.0)
+|   |   |   |   |   age > 41: admin. (2.0/1.0)
+|   |   |   |   poutcome = other: services (1.0)
+|   |   |   |   poutcome = success
+|   |   |   |   |   balance <= 1397: blue-collar (2.0)
+|   |   |   |   |   balance > 1397: admin. (2.0/1.0)
+|   |   |   |   poutcome = unknown
+|   |   |   |   |   y = no
+|   |   |   |   |   |   age <= 48
+|   |   |   |   |   |   |   duration <= 199
+|   |   |   |   |   |   |   |   balance <= 2
+|   |   |   |   |   |   |   |   |   balance <= -276
+|   |   |   |   |   |   |   |   |   |   duration <= 154: blue-collar (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   duration > 154: admin. (3.0)
+|   |   |   |   |   |   |   |   |   balance > -276: services (30.0/14.0)
+|   |   |   |   |   |   |   |   balance > 2
+|   |   |   |   |   |   |   |   |   marital = divorced
+|   |   |   |   |   |   |   |   |   |   day <= 30
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   loan = no: technician (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   loan = yes: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 4: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   day > 30: housemaid (2.0/1.0)
+|   |   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   |   age <= 43
+|   |   |   |   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   |   |   |   day <= 9
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 40: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 40: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   day > 9
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 34: admin. (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 34
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 375
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 122: admin. (4.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 122: services (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 375: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   contact = telephone
+|   |   |   |   |   |   |   |   |   |   |   |   age <= 38: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   age > 38: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   contact = unknown: technician (1.0)
+|   |   |   |   |   |   |   |   |   |   age > 43
+|   |   |   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   |   |   day <= 8: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   day > 8
+|   |   |   |   |   |   |   |   |   |   |   |   |   housing = no: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 45: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 45: technician (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   loan = yes: admin. (7.0/2.0)
+|   |   |   |   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   |   |   |   age <= 39
+|   |   |   |   |   |   |   |   |   |   |   duration <= 149: admin. (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   duration > 149
+|   |   |   |   |   |   |   |   |   |   |   |   housing = no: self-employed (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   housing = yes: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   age > 39: technician (7.0/2.0)
+|   |   |   |   |   |   |   duration > 199
+|   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   campaign <= 9
+|   |   |   |   |   |   |   |   |   |   marital = divorced
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   age <= 35: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   age > 35: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 1: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   |   |   age <= 33
+|   |   |   |   |   |   |   |   |   |   |   |   housing = no: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 153: services (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 153: self-employed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 33
+|   |   |   |   |   |   |   |   |   |   |   |   housing = no
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 350: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 350: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 524
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 162: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 162: admin. (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 524: blue-collar (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 2: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 2: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 263
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 1297: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 1297: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 263
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1: technician (7.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 1175: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 1175: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 22
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 15: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 15: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 22: blue-collar (4.0)
+|   |   |   |   |   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   |   |   |   |   age <= 34
+|   |   |   |   |   |   |   |   |   |   |   |   day <= 13: blue-collar (6.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   day > 13
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 158: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 158: technician (3.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 34: admin. (3.0/2.0)
+|   |   |   |   |   |   |   |   |   campaign > 9
+|   |   |   |   |   |   |   |   |   |   loan = no: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   loan = yes: blue-collar (3.0)
+|   |   |   |   |   |   |   |   contact = telephone
+|   |   |   |   |   |   |   |   |   day <= 20: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   day > 20: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   contact = unknown: blue-collar (4.0/1.0)
+|   |   |   |   |   |   age > 48
+|   |   |   |   |   |   |   duration <= 157
+|   |   |   |   |   |   |   |   age <= 49
+|   |   |   |   |   |   |   |   |   loan = no: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   |   |   |   loan = yes: admin. (2.0)
+|   |   |   |   |   |   |   |   age > 49: technician (3.0)
+|   |   |   |   |   |   |   duration > 157
+|   |   |   |   |   |   |   |   duration <= 195: services (2.0)
+|   |   |   |   |   |   |   |   duration > 195
+|   |   |   |   |   |   |   |   |   contact = cellular: unemployed (2.0)
+|   |   |   |   |   |   |   |   |   contact = telephone: entrepreneur (2.0)
+|   |   |   |   |   |   |   |   |   contact = unknown: entrepreneur (0.0)
+|   |   |   |   |   y = yes
+|   |   |   |   |   |   marital = divorced: admin. (3.0/1.0)
+|   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   campaign <= 2: blue-collar (4.0)
+|   |   |   |   |   |   |   campaign > 2: entrepreneur (3.0/1.0)
+|   |   |   |   |   |   marital = single: blue-collar (3.0/1.0)
+|   |   |   month = jun
+|   |   |   |   poutcome = failure: services (1.0)
+|   |   |   |   poutcome = other: technician (4.0/1.0)
+|   |   |   |   poutcome = success: services (1.0)
+|   |   |   |   poutcome = unknown
+|   |   |   |   |   day <= 5
+|   |   |   |   |   |   marital = divorced
+|   |   |   |   |   |   |   duration <= 188: technician (4.0/1.0)
+|   |   |   |   |   |   |   duration > 188: blue-collar (3.0/2.0)
+|   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   age <= 40
+|   |   |   |   |   |   |   |   day <= 3: blue-collar (18.0/4.0)
+|   |   |   |   |   |   |   |   day > 3
+|   |   |   |   |   |   |   |   |   day <= 4
+|   |   |   |   |   |   |   |   |   |   age <= 35: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   age > 35: services (3.0)
+|   |   |   |   |   |   |   |   |   day > 4
+|   |   |   |   |   |   |   |   |   |   balance <= 1792: blue-collar (3.0)
+|   |   |   |   |   |   |   |   |   |   balance > 1792: technician (2.0)
+|   |   |   |   |   |   |   age > 40
+|   |   |   |   |   |   |   |   age <= 48
+|   |   |   |   |   |   |   |   |   balance <= 3057
+|   |   |   |   |   |   |   |   |   |   duration <= 194: blue-collar (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   duration > 194: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   balance > 3057: admin. (2.0)
+|   |   |   |   |   |   |   |   age > 48: management (2.0/1.0)
+|   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   balance <= 2967
+|   |   |   |   |   |   |   |   day <= 2
+|   |   |   |   |   |   |   |   |   balance <= 1354: management (3.0/1.0)
+|   |   |   |   |   |   |   |   |   balance > 1354: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   day > 2: admin. (6.0/2.0)
+|   |   |   |   |   |   |   balance > 2967: blue-collar (3.0)
+|   |   |   |   |   day > 5
+|   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   balance <= 712: technician (2.0)
+|   |   |   |   |   |   |   balance > 712: management (2.0/1.0)
+|   |   |   |   |   |   contact = telephone: services (0.0)
+|   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   day <= 17
+|   |   |   |   |   |   |   |   marital = divorced
+|   |   |   |   |   |   |   |   |   balance <= 156: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   balance > 156: services (6.0/2.0)
+|   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   age <= 40
+|   |   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   |   age <= 36: housemaid (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 36
+|   |   |   |   |   |   |   |   |   |   |   |   balance <= 298: self-employed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   balance > 298: blue-collar (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   duration <= 131: services (5.0)
+|   |   |   |   |   |   |   |   |   |   |   duration > 131
+|   |   |   |   |   |   |   |   |   |   |   |   age <= 39: blue-collar (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   age > 39: services (2.0)
+|   |   |   |   |   |   |   |   |   age > 40
+|   |   |   |   |   |   |   |   |   |   age <= 48
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 2: self-employed (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 2
+|   |   |   |   |   |   |   |   |   |   |   |   balance <= 981: technician (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   balance > 981: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   age > 48: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   housing = no: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   housing = yes: technician (3.0)
+|   |   |   |   |   |   |   |   |   loan = yes: services (3.0/1.0)
+|   |   |   |   |   |   |   day > 17
+|   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   day <= 24
+|   |   |   |   |   |   |   |   |   |   age <= 36
+|   |   |   |   |   |   |   |   |   |   |   balance <= 1792: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   balance > 1792: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   age > 36
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   marital = divorced: admin. (1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 244
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 19: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 19
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 41: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 41: technician (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   duration > 244: admin. (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   marital = single: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 3
+|   |   |   |   |   |   |   |   |   |   |   |   duration <= 299: student (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration > 299: self-employed (2.0/1.0)
+|   |   |   |   |   |   |   |   |   day > 24: self-employed (3.0/2.0)
+|   |   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   |   balance <= 573: technician (2.0)
+|   |   |   |   |   |   |   |   |   balance > 573: blue-collar (3.0/2.0)
+|   |   |   month = mar
+|   |   |   |   marital = divorced: admin. (1.0)
+|   |   |   |   marital = married: admin. (4.0/2.0)
+|   |   |   |   marital = single: blue-collar (2.0)
+|   |   |   month = may
+|   |   |   |   housing = no
+|   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   day <= 13
+|   |   |   |   |   |   |   pdays <= 311: technician (3.0/1.0)
+|   |   |   |   |   |   |   pdays > 311: blue-collar (3.0)
+|   |   |   |   |   |   day > 13: admin. (2.0)
+|   |   |   |   |   poutcome = other: admin. (2.0/1.0)
+|   |   |   |   |   poutcome = success: services (2.0/1.0)
+|   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   age <= 33
+|   |   |   |   |   |   |   age <= 32: blue-collar (9.0/3.0)
+|   |   |   |   |   |   |   age > 32: technician (4.0/1.0)
+|   |   |   |   |   |   age > 33
+|   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   marital = divorced: admin. (0.0)
+|   |   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   |   age <= 38: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   age > 38: self-employed (2.0/1.0)
+|   |   |   |   |   |   |   |   |   marital = single: blue-collar (3.0/2.0)
+|   |   |   |   |   |   |   |   contact = telephone: technician (1.0)
+|   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   day <= 15
+|   |   |   |   |   |   |   |   |   |   balance <= 382: services (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   balance > 382: blue-collar (4.0/2.0)
+|   |   |   |   |   |   |   |   |   day > 15
+|   |   |   |   |   |   |   |   |   |   age <= 38
+|   |   |   |   |   |   |   |   |   |   |   day <= 20: entrepreneur (2.0)
+|   |   |   |   |   |   |   |   |   |   |   day > 20: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   age > 38
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 2: technician (7.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 2: admin. (4.0/2.0)
+|   |   |   |   |   |   |   loan = yes: admin. (4.0/1.0)
+|   |   |   |   housing = yes
+|   |   |   |   |   age <= 48
+|   |   |   |   |   |   marital = divorced
+|   |   |   |   |   |   |   default = no
+|   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   previous <= 1
+|   |   |   |   |   |   |   |   |   |   poutcome = failure: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   poutcome = other: blue-collar (1.0)
+|   |   |   |   |   |   |   |   |   |   poutcome = success: technician (0.0)
+|   |   |   |   |   |   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   |   |   |   |   |   balance <= 57
+|   |   |   |   |   |   |   |   |   |   |   |   contact = cellular: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   contact = telephone: blue-collar (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 41
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 26: blue-collar (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 26: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 41: technician (3.0)
+|   |   |   |   |   |   |   |   |   |   |   balance > 57
+|   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = cellular: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = telephone: services (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 41: services (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 41
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 44: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 44: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = cellular: services (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = telephone: technician (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = unknown: technician (9.0/2.0)
+|   |   |   |   |   |   |   |   |   previous > 1
+|   |   |   |   |   |   |   |   |   |   campaign <= 1: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   campaign > 1: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   |   day <= 13: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   day > 13: self-employed (2.0/1.0)
+|   |   |   |   |   |   |   default = yes: admin. (2.0)
+|   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   campaign <= 10
+|   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   |   |   |   |   previous <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 9: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 9: blue-collar (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   previous > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   previous <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 69: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 69: services (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   previous > 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 180: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 180: blue-collar (4.0)
+|   |   |   |   |   |   |   |   |   |   |   y = yes: admin. (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   contact = telephone: blue-collar (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   contact = unknown: blue-collar (0.0)
+|   |   |   |   |   |   |   |   |   poutcome = other
+|   |   |   |   |   |   |   |   |   |   pdays <= 140: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pdays > 140: blue-collar (7.0/1.0)
+|   |   |   |   |   |   |   |   |   poutcome = success: admin. (1.0)
+|   |   |   |   |   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   |   |   |   |   day <= 26
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   age <= 38
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 11: blue-collar (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 11
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 37: services (10.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 37: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = telephone: services (1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= -328: blue-collar (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > -328
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 466
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 11
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 35: services (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 35: blue-collar (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 11
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 124
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 276: admin. (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 276: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 124: services (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 466
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 33
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 1801: blue-collar (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 1801: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1: blue-collar (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 33
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 22
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 204: blue-collar (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 204: admin. (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 22: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   y = yes: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   age > 38
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 40
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1: services (8.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 17
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 1097: technician (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 1097: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 17: services (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 40
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 11
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 52: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 52: technician (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 11: blue-collar (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   contact = telephone: blue-collar (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1: blue-collar (17.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 14
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 10
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 45: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 45: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 10
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 1792: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 1792: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 14: blue-collar (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 2
+|   |   |   |   |   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 312: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 312: blue-collar (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   contact = telephone: services (1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 279
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 119: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 119: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 272: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 272: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 4: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 279
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 24
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 32: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 32
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 190
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 22: management (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 22: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 190
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 13: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 13: technician (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 4: blue-collar (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 24: technician (3.0)
+|   |   |   |   |   |   |   |   |   |   day > 26
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   duration <= 205
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 33: management (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 33
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 27: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 27
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1: services (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 39: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 39: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration > 205
+|   |   |   |   |   |   |   |   |   |   |   |   |   day <= 27: management (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   day > 27: blue-collar (8.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 2
+|   |   |   |   |   |   |   |   |   |   |   |   campaign <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 34: self-employed (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 34: management (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   campaign > 4: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   |   pdays <= 293
+|   |   |   |   |   |   |   |   |   |   |   age <= 43: blue-collar (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 43
+|   |   |   |   |   |   |   |   |   |   |   |   day <= 13: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   day > 13: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   pdays > 293
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 1: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 1: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   contact = telephone: admin. (1.0)
+|   |   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   |   balance <= 1504
+|   |   |   |   |   |   |   |   |   |   |   duration <= 414
+|   |   |   |   |   |   |   |   |   |   |   |   duration <= 298
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 158
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 160: admin. (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 160: technician (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   balance > 158
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 39
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 33: services (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 33: blue-collar (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 39: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 21: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 21: blue-collar (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration > 298: services (4.0)
+|   |   |   |   |   |   |   |   |   |   |   duration > 414
+|   |   |   |   |   |   |   |   |   |   |   |   balance <= -26: entrepreneur (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   balance > -26: blue-collar (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   balance > 1504: admin. (3.0/2.0)
+|   |   |   |   |   |   |   campaign > 10
+|   |   |   |   |   |   |   |   balance <= 367: admin. (2.0)
+|   |   |   |   |   |   |   |   balance > 367: management (3.0/2.0)
+|   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   |   |   |   |   |   |   age <= 32: admin. (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   age > 32: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   poutcome = other: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   poutcome = success: technician (1.0)
+|   |   |   |   |   |   |   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   |   |   |   |   |   |   balance <= 16: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   balance > 16
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 282: services (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 282
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 31: services (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 31
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 77: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 77: blue-collar (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   |   |   |   |   previous <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 39
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 34: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 34: admin. (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 39: services (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   previous > 1: technician (6.0)
+|   |   |   |   |   |   |   |   |   |   |   y = yes: services (4.0/1.0)
+|   |   |   |   |   |   |   |   |   loan = yes: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   contact = telephone: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   |   |   |   |   duration <= 137
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 40
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 34: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 34: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 40: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration > 137
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 1548
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration <= 610
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age <= 36: services (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   age > 36
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   duration > 610: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 1548: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   y = yes: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   campaign > 2
+|   |   |   |   |   |   |   |   |   |   |   balance <= 364: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   balance > 364: admin. (2.0)
+|   |   |   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   |   |   day <= 21: technician (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   day > 21: retired (2.0/1.0)
+|   |   |   |   |   |   |   campaign > 3
+|   |   |   |   |   |   |   |   pdays <= 82
+|   |   |   |   |   |   |   |   |   age <= 33: self-employed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   age > 33
+|   |   |   |   |   |   |   |   |   |   duration <= 46: admin. (3.0)
+|   |   |   |   |   |   |   |   |   |   duration > 46
+|   |   |   |   |   |   |   |   |   |   |   duration <= 161: management (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   duration > 161: technician (6.0/2.0)
+|   |   |   |   |   |   |   |   pdays > 82: technician (2.0)
+|   |   |   |   |   age > 48
+|   |   |   |   |   |   pdays <= 294
+|   |   |   |   |   |   |   marital = divorced: technician (2.0)
+|   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   campaign <= 1: blue-collar (5.0/1.0)
+|   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   day <= 16: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   day > 16: technician (3.0)
+|   |   |   |   |   |   |   |   campaign > 2
+|   |   |   |   |   |   |   |   |   campaign <= 6
+|   |   |   |   |   |   |   |   |   |   duration <= 187: self-employed (2.0)
+|   |   |   |   |   |   |   |   |   |   duration > 187: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   |   |   |   campaign > 6: blue-collar (2.0)
+|   |   |   |   |   |   |   marital = single: blue-collar (0.0)
+|   |   |   |   |   |   pdays > 294: entrepreneur (2.0/1.0)
+|   |   |   month = nov
+|   |   |   |   previous <= 4
+|   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   balance <= 232
+|   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   age <= 39: blue-collar (4.0/2.0)
+|   |   |   |   |   |   |   |   age > 39: unemployed (2.0)
+|   |   |   |   |   |   |   loan = yes: admin. (3.0/1.0)
+|   |   |   |   |   |   balance > 232
+|   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   marital = divorced: admin. (1.0)
+|   |   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   |   campaign <= 6
+|   |   |   |   |   |   |   |   |   |   previous <= 1: technician (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   previous > 1
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 1: blue-collar (3.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   day <= 19: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   day > 19: technician (3.0)
+|   |   |   |   |   |   |   |   |   campaign > 6: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   marital = single: technician (3.0/1.0)
+|   |   |   |   |   |   |   y = yes: admin. (2.0/1.0)
+|   |   |   |   |   poutcome = other
+|   |   |   |   |   |   age <= 42: admin. (4.0/1.0)
+|   |   |   |   |   |   age > 42
+|   |   |   |   |   |   |   duration <= 214: management (2.0/1.0)
+|   |   |   |   |   |   |   duration > 214: blue-collar (2.0)
+|   |   |   |   |   poutcome = success: technician (3.0/1.0)
+|   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   contact = cellular
+|   |   |   |   |   |   |   marital = divorced
+|   |   |   |   |   |   |   |   housing = no: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   |   campaign <= 1: unemployed (4.0/1.0)
+|   |   |   |   |   |   |   |   |   campaign > 1: technician (3.0)
+|   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   duration <= 468
+|   |   |   |   |   |   |   |   |   duration <= 55
+|   |   |   |   |   |   |   |   |   |   age <= 35: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   age > 35: management (2.0)
+|   |   |   |   |   |   |   |   |   duration > 55
+|   |   |   |   |   |   |   |   |   |   housing = no
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 64: management (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 64: entrepreneur (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 2: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance <= 98: technician (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   balance > 98
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 18: blue-collar (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 18: admin. (11.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loan = yes: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   campaign > 2: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 3: blue-collar (3.0/2.0)
+|   |   |   |   |   |   |   |   duration > 468
+|   |   |   |   |   |   |   |   |   campaign <= 1: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   campaign > 1: self-employed (3.0/1.0)
+|   |   |   |   |   |   |   marital = single
+|   |   |   |   |   |   |   |   day <= 17: management (3.0/1.0)
+|   |   |   |   |   |   |   |   day > 17
+|   |   |   |   |   |   |   |   |   age <= 32
+|   |   |   |   |   |   |   |   |   |   age <= 31: self-employed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   age > 31: admin. (4.0/1.0)
+|   |   |   |   |   |   |   |   |   age > 32
+|   |   |   |   |   |   |   |   |   |   balance <= 4667
+|   |   |   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   |   |   duration <= 437: admin. (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration > 437: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   loan = yes: blue-collar (3.0)
+|   |   |   |   |   |   |   |   |   |   balance > 4667
+|   |   |   |   |   |   |   |   |   |   |   age <= 33: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 33: technician (2.0)
+|   |   |   |   |   |   contact = telephone
+|   |   |   |   |   |   |   housing = no: entrepreneur (3.0/2.0)
+|   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   age <= 43: services (2.0)
+|   |   |   |   |   |   |   |   age > 43: admin. (2.0)
+|   |   |   |   |   |   contact = unknown: admin. (1.0)
+|   |   |   |   previous > 4
+|   |   |   |   |   duration <= 69: admin. (3.0/2.0)
+|   |   |   |   |   duration > 69: technician (4.0/1.0)
+|   |   |   month = oct
+|   |   |   |   balance <= 272: admin. (7.0/4.0)
+|   |   |   |   balance > 272: technician (10.0/4.0)
+|   |   |   month = sep
+|   |   |   |   campaign <= 1: blue-collar (7.0/3.0)
+|   |   |   |   campaign > 1: technician (2.0)
+|   age > 50
+|   |   age <= 61
+|   |   |   month = apr
+|   |   |   |   contact = cellular
+|   |   |   |   |   y = no
+|   |   |   |   |   |   previous <= 1: admin. (9.0/3.0)
+|   |   |   |   |   |   previous > 1: retired (2.0/1.0)
+|   |   |   |   |   y = yes
+|   |   |   |   |   |   housing = no: technician (3.0/1.0)
+|   |   |   |   |   |   housing = yes: blue-collar (2.0/1.0)
+|   |   |   |   contact = telephone: blue-collar (2.0)
+|   |   |   |   contact = unknown: admin. (0.0)
+|   |   |   month = aug
+|   |   |   |   marital = divorced
+|   |   |   |   |   duration <= 198: technician (5.0/1.0)
+|   |   |   |   |   duration > 198: entrepreneur (3.0/2.0)
+|   |   |   |   marital = married
+|   |   |   |   |   age <= 54
+|   |   |   |   |   |   duration <= 290
+|   |   |   |   |   |   |   balance <= 305: technician (14.0/5.0)
+|   |   |   |   |   |   |   balance > 305
+|   |   |   |   |   |   |   |   balance <= 439: services (3.0)
+|   |   |   |   |   |   |   |   balance > 439
+|   |   |   |   |   |   |   |   |   housing = no
+|   |   |   |   |   |   |   |   |   |   day <= 15: technician (2.0)
+|   |   |   |   |   |   |   |   |   |   day > 15: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   housing = yes: blue-collar (3.0)
+|   |   |   |   |   |   duration > 290: blue-collar (8.0/4.0)
+|   |   |   |   |   age > 54
+|   |   |   |   |   |   age <= 59
+|   |   |   |   |   |   |   duration <= 86
+|   |   |   |   |   |   |   |   age <= 56
+|   |   |   |   |   |   |   |   |   balance <= 125: services (2.0)
+|   |   |   |   |   |   |   |   |   balance > 125: retired (2.0)
+|   |   |   |   |   |   |   |   age > 56: management (2.0)
+|   |   |   |   |   |   |   duration > 86
+|   |   |   |   |   |   |   |   balance <= 997: retired (14.0/5.0)
+|   |   |   |   |   |   |   |   balance > 997: blue-collar (6.0/3.0)
+|   |   |   |   |   |   age > 59
+|   |   |   |   |   |   |   age <= 60: admin. (3.0/1.0)
+|   |   |   |   |   |   |   age > 60: management (3.0)
+|   |   |   |   marital = single: admin. (2.0/1.0)
+|   |   |   month = dec: admin. (2.0)
+|   |   |   month = feb
+|   |   |   |   campaign <= 1
+|   |   |   |   |   age <= 58: technician (6.0/1.0)
+|   |   |   |   |   age > 58: unemployed (3.0/1.0)
+|   |   |   |   campaign > 1
+|   |   |   |   |   loan = no
+|   |   |   |   |   |   age <= 54: services (3.0/1.0)
+|   |   |   |   |   |   age > 54: admin. (2.0/1.0)
+|   |   |   |   |   loan = yes: retired (2.0)
+|   |   |   month = jan
+|   |   |   |   housing = no: admin. (7.0/3.0)
+|   |   |   |   housing = yes: technician (4.0/1.0)
+|   |   |   month = jul
+|   |   |   |   campaign <= 5
+|   |   |   |   |   contact = cellular
+|   |   |   |   |   |   age <= 54
+|   |   |   |   |   |   |   marital = divorced: technician (4.0/1.0)
+|   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   |   |   |   housing = no
+|   |   |   |   |   |   |   |   |   |   loan = no: services (3.0)
+|   |   |   |   |   |   |   |   |   |   loan = yes: technician (4.0/2.0)
+|   |   |   |   |   |   |   |   |   housing = yes
+|   |   |   |   |   |   |   |   |   |   campaign <= 1: blue-collar (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   campaign > 1: technician (5.0/2.0)
+|   |   |   |   |   |   |   |   campaign > 3: management (3.0/2.0)
+|   |   |   |   |   |   |   marital = single: technician (0.0)
+|   |   |   |   |   |   age > 54
+|   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   balance <= 363: retired (8.0/2.0)
+|   |   |   |   |   |   |   |   balance > 363
+|   |   |   |   |   |   |   |   |   balance <= 766: management (2.0)
+|   |   |   |   |   |   |   |   |   balance > 766: admin. (2.0/1.0)
+|   |   |   |   |   |   |   loan = yes
+|   |   |   |   |   |   |   |   duration <= 359
+|   |   |   |   |   |   |   |   |   age <= 56: self-employed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   age > 56: retired (2.0)
+|   |   |   |   |   |   |   |   duration > 359: technician (3.0/1.0)
+|   |   |   |   |   contact = telephone
+|   |   |   |   |   |   age <= 56
+|   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   balance <= 849
+|   |   |   |   |   |   |   |   |   housing = no: services (3.0/1.0)
+|   |   |   |   |   |   |   |   |   housing = yes: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   balance > 849: retired (2.0)
+|   |   |   |   |   |   |   loan = yes: retired (4.0/2.0)
+|   |   |   |   |   |   age > 56: blue-collar (3.0/2.0)
+|   |   |   |   |   contact = unknown: retired (1.0)
+|   |   |   |   campaign > 5
+|   |   |   |   |   contact = cellular
+|   |   |   |   |   |   duration <= 118: services (3.0)
+|   |   |   |   |   |   duration > 118
+|   |   |   |   |   |   |   age <= 56: entrepreneur (4.0/2.0)
+|   |   |   |   |   |   |   age > 56: retired (2.0)
+|   |   |   |   |   contact = telephone: admin. (3.0/1.0)
+|   |   |   |   |   contact = unknown: admin. (0.0)
+|   |   |   month = jun
+|   |   |   |   balance <= 5
+|   |   |   |   |   y = no
+|   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   duration <= 171: unemployed (2.0)
+|   |   |   |   |   |   |   duration > 171: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   loan = yes: retired (3.0/1.0)
+|   |   |   |   |   y = yes: retired (2.0)
+|   |   |   |   balance > 5
+|   |   |   |   |   duration <= 60
+|   |   |   |   |   |   age <= 53: self-employed (2.0)
+|   |   |   |   |   |   age > 53: housemaid (2.0/1.0)
+|   |   |   |   |   duration > 60
+|   |   |   |   |   |   day <= 22
+|   |   |   |   |   |   |   housing = no
+|   |   |   |   |   |   |   |   age <= 57
+|   |   |   |   |   |   |   |   |   day <= 7: housemaid (3.0/1.0)
+|   |   |   |   |   |   |   |   |   day > 7
+|   |   |   |   |   |   |   |   |   |   campaign <= 2: admin. (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   campaign > 2: retired (2.0)
+|   |   |   |   |   |   |   |   age > 57
+|   |   |   |   |   |   |   |   |   balance <= 424: technician (2.0)
+|   |   |   |   |   |   |   |   |   balance > 424: retired (3.0/1.0)
+|   |   |   |   |   |   |   housing = yes: admin. (4.0/2.0)
+|   |   |   |   |   |   day > 22: blue-collar (2.0/1.0)
+|   |   |   month = mar
+|   |   |   |   balance <= 952: management (2.0/1.0)
+|   |   |   |   balance > 952: admin. (2.0)
+|   |   |   month = may
+|   |   |   |   poutcome = failure
+|   |   |   |   |   previous <= 1
+|   |   |   |   |   |   age <= 52: blue-collar (2.0/1.0)
+|   |   |   |   |   |   age > 52: admin. (5.0/1.0)
+|   |   |   |   |   previous > 1
+|   |   |   |   |   |   previous <= 4: retired (3.0)
+|   |   |   |   |   |   previous > 4: blue-collar (3.0/1.0)
+|   |   |   |   poutcome = other
+|   |   |   |   |   marital = divorced: services (4.0/1.0)
+|   |   |   |   |   marital = married: management (2.0/1.0)
+|   |   |   |   |   marital = single: services (0.0)
+|   |   |   |   poutcome = success: blue-collar (0.0)
+|   |   |   |   poutcome = unknown
+|   |   |   |   |   contact = cellular
+|   |   |   |   |   |   duration <= 387
+|   |   |   |   |   |   |   campaign <= 1: blue-collar (4.0)
+|   |   |   |   |   |   |   campaign > 1
+|   |   |   |   |   |   |   |   balance <= 1174: services (2.0/1.0)
+|   |   |   |   |   |   |   |   balance > 1174: technician (3.0/1.0)
+|   |   |   |   |   |   duration > 387: retired (4.0)
+|   |   |   |   |   contact = telephone: admin. (1.0)
+|   |   |   |   |   contact = unknown
+|   |   |   |   |   |   marital = divorced
+|   |   |   |   |   |   |   day <= 26
+|   |   |   |   |   |   |   |   duration <= 216: admin. (4.0)
+|   |   |   |   |   |   |   |   duration > 216: technician (6.0/2.0)
+|   |   |   |   |   |   |   day > 26
+|   |   |   |   |   |   |   |   age <= 52: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   age > 52: services (2.0)
+|   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   day <= 29
+|   |   |   |   |   |   |   |   balance <= -49
+|   |   |   |   |   |   |   |   |   campaign <= 1: blue-collar (3.0)
+|   |   |   |   |   |   |   |   |   campaign > 1: entrepreneur (2.0/1.0)
+|   |   |   |   |   |   |   |   balance > -49
+|   |   |   |   |   |   |   |   |   duration <= 143
+|   |   |   |   |   |   |   |   |   |   age <= 54: blue-collar (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   age > 54
+|   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   balance <= 2125: admin. (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   balance > 2125: retired (2.0)
+|   |   |   |   |   |   |   |   |   |   |   campaign > 2: retired (2.0)
+|   |   |   |   |   |   |   |   |   duration > 143
+|   |   |   |   |   |   |   |   |   |   duration <= 225
+|   |   |   |   |   |   |   |   |   |   |   age <= 53: technician (3.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 53
+|   |   |   |   |   |   |   |   |   |   |   |   duration <= 209: services (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   duration > 209: retired (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   duration > 225
+|   |   |   |   |   |   |   |   |   |   |   loan = no
+|   |   |   |   |   |   |   |   |   |   |   |   campaign <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day <= 9: blue-collar (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   day > 9: technician (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   campaign > 1: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   campaign > 2: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   loan = yes: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   day > 29
+|   |   |   |   |   |   |   |   duration <= 88: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   duration > 88: technician (4.0/1.0)
+|   |   |   |   |   |   marital = single: admin. (2.0/1.0)
+|   |   |   month = nov
+|   |   |   |   campaign <= 1
+|   |   |   |   |   poutcome = failure: retired (2.0/1.0)
+|   |   |   |   |   poutcome = other: unknown (1.0)
+|   |   |   |   |   poutcome = success: services (1.0)
+|   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   age <= 54: services (5.0/2.0)
+|   |   |   |   |   |   age > 54
+|   |   |   |   |   |   |   age <= 57
+|   |   |   |   |   |   |   |   balance <= 6421: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   balance > 6421: self-employed (2.0/1.0)
+|   |   |   |   |   |   |   age > 57: retired (4.0/1.0)
+|   |   |   |   campaign > 1
+|   |   |   |   |   contact = cellular: technician (5.0/2.0)
+|   |   |   |   |   contact = telephone: admin. (3.0)
+|   |   |   |   |   contact = unknown: admin. (0.0)
+|   |   |   month = oct
+|   |   |   |   age <= 58
+|   |   |   |   |   balance <= 379: housemaid (2.0/1.0)
+|   |   |   |   |   balance > 379: admin. (5.0)
+|   |   |   |   age > 58: retired (3.0/1.0)
+|   |   |   month = sep: admin. (2.0/1.0)
+|   |   age > 61
+|   |   |   pdays <= 186: retired (36.0/5.0)
+|   |   |   pdays > 186: blue-collar (2.0/1.0)
+education = tertiary
+|   age <= 53: management (1205.0/499.0)
+|   age > 53
+|   |   age <= 62: management (123.0/46.0)
+|   |   age > 62: retired (22.0/6.0)
+education = unknown
+|   age <= 56
+|   |   housing = no
+|   |   |   age <= 42
+|   |   |   |   contact = cellular
+|   |   |   |   |   month = apr: student (1.0)
+|   |   |   |   |   month = aug: student (3.0)
+|   |   |   |   |   month = dec: student (2.0/1.0)
+|   |   |   |   |   month = feb
+|   |   |   |   |   |   campaign <= 2: management (3.0/1.0)
+|   |   |   |   |   |   campaign > 2: student (2.0)
+|   |   |   |   |   month = jan: entrepreneur (2.0/1.0)
+|   |   |   |   |   month = jul
+|   |   |   |   |   |   day <= 9: blue-collar (3.0/2.0)
+|   |   |   |   |   |   day > 9: technician (3.0)
+|   |   |   |   |   month = jun: blue-collar (1.0)
+|   |   |   |   |   month = mar: student (0.0)
+|   |   |   |   |   month = may: student (0.0)
+|   |   |   |   |   month = nov: admin. (2.0/1.0)
+|   |   |   |   |   month = oct: management (2.0/1.0)
+|   |   |   |   |   month = sep
+|   |   |   |   |   |   duration <= 170: student (2.0)
+|   |   |   |   |   |   duration > 170: admin. (2.0/1.0)
+|   |   |   |   contact = telephone: student (3.0/1.0)
+|   |   |   |   contact = unknown
+|   |   |   |   |   campaign <= 4
+|   |   |   |   |   |   age <= 37
+|   |   |   |   |   |   |   day <= 13: services (2.0/1.0)
+|   |   |   |   |   |   |   day > 13: student (3.0/1.0)
+|   |   |   |   |   |   age > 37: technician (3.0/1.0)
+|   |   |   |   |   campaign > 4: blue-collar (3.0/1.0)
+|   |   |   age > 42
+|   |   |   |   month = apr: housemaid (1.0)
+|   |   |   |   month = aug
+|   |   |   |   |   age <= 49: unknown (2.0)
+|   |   |   |   |   age > 49
+|   |   |   |   |   |   balance <= 582: blue-collar (3.0)
+|   |   |   |   |   |   balance > 582: housemaid (2.0/1.0)
+|   |   |   |   month = dec: unknown (0.0)
+|   |   |   |   month = feb: admin. (2.0)
+|   |   |   |   month = jan
+|   |   |   |   |   age <= 54: unknown (2.0)
+|   |   |   |   |   age > 54: blue-collar (2.0/1.0)
+|   |   |   |   month = jul
+|   |   |   |   |   contact = cellular
+|   |   |   |   |   |   age <= 51: unknown (2.0)
+|   |   |   |   |   |   age > 51: entrepreneur (2.0/1.0)
+|   |   |   |   |   contact = telephone: housemaid (3.0/1.0)
+|   |   |   |   |   contact = unknown: housemaid (0.0)
+|   |   |   |   month = jun
+|   |   |   |   |   day <= 10: management (3.0/1.0)
+|   |   |   |   |   day > 10
+|   |   |   |   |   |   age <= 50
+|   |   |   |   |   |   |   age <= 46: admin. (2.0)
+|   |   |   |   |   |   |   age > 46: blue-collar (3.0/1.0)
+|   |   |   |   |   |   age > 50: unknown (5.0/2.0)
+|   |   |   |   month = mar: unknown (0.0)
+|   |   |   |   month = may: admin. (2.0/1.0)
+|   |   |   |   month = nov
+|   |   |   |   |   pdays <= 75: entrepreneur (2.0)
+|   |   |   |   |   pdays > 75: admin. (2.0/1.0)
+|   |   |   |   month = oct: services (2.0/1.0)
+|   |   |   |   month = sep: unknown (0.0)
+|   |   housing = yes
+|   |   |   age <= 31
+|   |   |   |   contact = cellular: blue-collar (4.0)
+|   |   |   |   contact = telephone: blue-collar (0.0)
+|   |   |   |   contact = unknown
+|   |   |   |   |   duration <= 162: blue-collar (2.0)
+|   |   |   |   |   duration > 162: student (3.0/1.0)
+|   |   |   age > 31
+|   |   |   |   balance <= 316
+|   |   |   |   |   campaign <= 3
+|   |   |   |   |   |   previous <= 1
+|   |   |   |   |   |   |   marital = divorced: management (3.0/1.0)
+|   |   |   |   |   |   |   marital = married
+|   |   |   |   |   |   |   |   previous <= 0
+|   |   |   |   |   |   |   |   |   campaign <= 1
+|   |   |   |   |   |   |   |   |   |   balance <= 32: self-employed (2.0)
+|   |   |   |   |   |   |   |   |   |   balance > 32: blue-collar (2.0)
+|   |   |   |   |   |   |   |   |   campaign > 1: entrepreneur (4.0/1.0)
+|   |   |   |   |   |   |   |   previous > 0: entrepreneur (3.0/1.0)
+|   |   |   |   |   |   |   marital = single: admin. (1.0)
+|   |   |   |   |   |   previous > 1: admin. (2.0/1.0)
+|   |   |   |   |   campaign > 3: blue-collar (6.0)
+|   |   |   |   balance > 316
+|   |   |   |   |   poutcome = failure
+|   |   |   |   |   |   previous <= 2: admin. (3.0/2.0)
+|   |   |   |   |   |   previous > 2: services (2.0/1.0)
+|   |   |   |   |   poutcome = other: blue-collar (2.0/1.0)
+|   |   |   |   |   poutcome = success: management (1.0)
+|   |   |   |   |   poutcome = unknown
+|   |   |   |   |   |   age <= 45
+|   |   |   |   |   |   |   contact = cellular: management (2.0)
+|   |   |   |   |   |   |   contact = telephone: admin. (2.0/1.0)
+|   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   balance <= 796
+|   |   |   |   |   |   |   |   |   duration <= 452: technician (5.0/1.0)
+|   |   |   |   |   |   |   |   |   duration > 452: admin. (2.0/1.0)
+|   |   |   |   |   |   |   |   balance > 796
+|   |   |   |   |   |   |   |   |   month = apr: management (0.0)
+|   |   |   |   |   |   |   |   |   month = aug: management (0.0)
+|   |   |   |   |   |   |   |   |   month = dec: management (0.0)
+|   |   |   |   |   |   |   |   |   month = feb: management (0.0)
+|   |   |   |   |   |   |   |   |   month = jan: management (0.0)
+|   |   |   |   |   |   |   |   |   month = jul: management (0.0)
+|   |   |   |   |   |   |   |   |   month = jun: blue-collar (2.0/1.0)
+|   |   |   |   |   |   |   |   |   month = mar: management (0.0)
+|   |   |   |   |   |   |   |   |   month = may: management (5.0/1.0)
+|   |   |   |   |   |   |   |   |   month = nov: management (0.0)
+|   |   |   |   |   |   |   |   |   month = oct: management (0.0)
+|   |   |   |   |   |   |   |   |   month = sep: management (0.0)
+|   |   |   |   |   |   age > 45
+|   |   |   |   |   |   |   y = no
+|   |   |   |   |   |   |   |   contact = cellular: technician (5.0/2.0)
+|   |   |   |   |   |   |   |   contact = telephone: services (0.0)
+|   |   |   |   |   |   |   |   contact = unknown
+|   |   |   |   |   |   |   |   |   age <= 50: technician (3.0/1.0)
+|   |   |   |   |   |   |   |   |   age > 50
+|   |   |   |   |   |   |   |   |   |   age <= 53: blue-collar (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   age > 53: services (3.0)
+|   |   |   |   |   |   |   y = yes: blue-collar (2.0)
+|   age > 56
+|   |   day <= 18
+|   |   |   housing = no
+|   |   |   |   balance <= 3431: retired (12.0/2.0)
+|   |   |   |   balance > 3431: unknown (3.0)
+|   |   |   housing = yes: blue-collar (3.0/1.0)
+|   |   day > 18
+|   |   |   housing = no
+|   |   |   |   marital = divorced: admin. (2.0)
+|   |   |   |   marital = married: management (3.0)
+|   |   |   |   marital = single: management (0.0)
+|   |   |   housing = yes
+|   |   |   |   age <= 59: retired (2.0)
+|   |   |   |   age > 59: admin. (3.0/1.0)
+
+Number of Leaves  : 	802
+
+Size of the tree : 	1442
+
+
+Time taken to build model: 0.61 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1800               39.8142 %
+Incorrectly Classified Instances      2721               60.1858 %
+Kappa statistic                          0.2771
+Mean absolute error                      0.1164
+Root mean squared error                  0.2801
+Relative absolute error                 81.7051 %
+Root relative squared error            104.9722 %
+Total Number of Instances             4521     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,184    0,100    0,179      0,184    0,181      0,083    0,483     0,132     admin.
+                 0,558    0,194    0,433      0,558    0,488      0,334    0,657     0,342     blue-collar
+                 0,024    0,017    0,051      0,024    0,032      0,009    0,586     0,046     entrepreneur
+                 0,009    0,011    0,020      0,009    0,012      -0,003   0,618     0,042     housemaid
+                 0,798    0,179    0,549      0,798    0,650      0,548    0,812     0,478     management
+                 0,448    0,025    0,486      0,448    0,466      0,439    0,754     0,326     retired
+                 0,005    0,011    0,021      0,005    0,009      -0,010   0,585     0,050     self-employed
+                 0,173    0,059    0,230      0,173    0,197      0,130    0,523     0,141     services
+                 0,238    0,012    0,274      0,238    0,255      0,242    0,716     0,127     student
+                 0,264    0,102    0,346      0,264    0,300      0,181    0,585     0,243     technician
+                 0,047    0,007    0,171      0,047    0,074      0,076    0,529     0,043     unemployed
+                 0,026    0,001    0,167      0,026    0,045      0,063    0,558     0,058     unknown
+Weighted Avg.    0,398    0,115    0,346      0,398    0,363      0,268    0,642     0,267     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   j   k   l   <-- classified as
+  88 126  12   7  70  16  11  58  14  72   4   0 |   a = admin.
+ 124 528  18  12  33  21  10  75   8 109   7   1 |   b = blue-collar
+   9  43   4   2  78   4   2   8   1  14   3   0 |   c = entrepreneur
+  11  50   0   1  25  16   0   2   2   5   0   0 |   d = housemaid
+  23  69   8   3 773  15   5  16   5  48   1   3 |   e = management
+  18  39   2  15  25 103   3   8   1  13   3   0 |   f = retired
+  14  38   6   2  85   4   1  10   2  21   0   0 |   g = self-employed
+  70 140  14   2  27  10   4  72   3  71   4   0 |   h = services
+  12  11   1   0  21   0   1   9  20   8   1   0 |   i = student
+ 105 128  10   4 229  14   7  48  13 203   6   1 |   j = technician
+  16  38   2   0  32   4   4   6   2  18   6   0 |   k = unemployed
+   2  10   2   1  10   5   0   1   2   4   0   1 |   l = unknown
+
